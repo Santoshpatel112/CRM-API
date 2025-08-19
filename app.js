@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv"
+import ConnectDB from "./DB/db.js";
 const app=express();
 dotenv.config();
+
 const PORT =process.env.PORT || 3000;
 
 app.get('/',(req,res)=>{
@@ -12,5 +14,6 @@ app.get('/',(req,res)=>{
 
 
 app.listen(PORT ,(req,res)=>{
-    console.log(`Server are litning on PORT ${PORT}`);
+    console.log(`Server are listning on PORT ${PORT}`);
+    ConnectDB();
 })
